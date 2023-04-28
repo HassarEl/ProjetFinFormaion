@@ -31,22 +31,23 @@
         <div class="row">
             <div class="card m-0">
                 <div class="card-header">
-                  Contenu Jardin Plante
+                  Contenu Jardin
                 </div>
                 <div class="card-body">
                   
-                    <form class="form">
+                    <form class="form" action="{{route('contenu.content')}}" method="POST">
+                        @csrf
                         <div class="col-12">
                           <label for="inputEmail4" class="form-label">Liste Jardins</label>
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select" name="jardin">
                             <option selected>Select Jardin</option>
                             @foreach($jardins as $jardin)
-                            <option value="{{$jardin->nomJardin}}">{{$jardin->nomJardin}}</option>
+                            <option value="{{$jardin->id}}">{{$jardin->nomJardin}}</option>
                             @endforeach
                           </select>
                         </div>
                         <br>
-                        <div class="col-8">
+                        {{-- <div class="col-8">
                           <label for="inputPassword4" class="form-label">Composition</label>
                           <table class="table  table-bordere">
                             <thead>
@@ -95,8 +96,8 @@
                             <div class="col-6">
                                 <input type="text" class="form-control">
                             </div>
-                        </div>
-                        <br>
+                        </div> --}}
+
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Ajouter</button>
@@ -110,5 +111,5 @@
 @endsection
 
 @section('scripts')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 @endsection

@@ -53,6 +53,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
     //Route Contenu
     Route::get('/contenu', [ContenuController::class,'index'])->name('contenu.index');
+    Route::post('/contenu', [ContenuController::class,'content'])->name('contenu.content');
     Route::get('/contenu/create', [ContenuController::class,'create'])->name('contenu.create');
 
 });
