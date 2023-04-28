@@ -31,38 +31,48 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-8">
-            <label for="inputPassword4" class="form-label">Composition</label>
-            <table class="table  table-bordere">
-              <thead>
-                <tr>
-                  <th>Plante</th>
-                  <th>Quantite</th>
-                  <th>Acction</th>
-                </tr>
-              </thead>
-              <tbody>
-            
-            @foreach($jardin_plants as $plante)
-                <tr>
-                    <td>
-                        {{$plante->name}}
-                    </td>
-                    <td>
-                       {{$pivot}}
-                    </td>
-                    <td align="center">
-                        <form method="POST" action="" accept-charset="UTF-8" >
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-                
-            </tbody>
-          </table>
+        <div class="card">
+            <div class="card-header">
+                <label for="inputPassword4" class="form-label">Composition</label>
+            </div>
+            <div class="card-body d-flex">
+                <div class="col-8">
+                    <table class="table table-bordere">
+                      <thead>
+                        <tr>
+                          <th>Plante</th>
+                          <th>Quantite</th>
+                          <th>Acction</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                    
+                    @foreach($jardin_plants as $plante)
+                        <tr>
+                            <td>
+                                {{$plante->name}}
+                            </td>
+                            <td>
+                               @foreach($pivot as $piv)
+                               {{$piv->quantite}}
+                               {{-- @dd($piv->id) --}}
+                               @endforeach
+                            </td>
+                            
+                            <td>
+                                <form method="POST" action="" accept-charset="UTF-8" >
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                        
+                    </tbody>
+                  </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
