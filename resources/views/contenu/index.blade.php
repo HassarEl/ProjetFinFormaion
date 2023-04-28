@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <a class="btn btn-primary" href="{{route('contenu.attach')}}">Ajouter Plantes</a>
+                <a class="btn btn-primary" href="{{route('contenu.create')}}">Ajouter Plantes</a>
             </div>
         </div>
         <br>

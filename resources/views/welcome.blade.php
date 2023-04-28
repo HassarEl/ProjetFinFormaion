@@ -5,7 +5,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
           
-            <div class="card">
+           @if (Auth::check())
+           <div class="card">
+              <div class="card-header">{{ __('Home Page') }}</div>
+                <div class="card-body">
+                  <div class="row text-center">
+                    <div class="col-lg-12">
+                      <h5>Dashboard</h5>
+                      <a class="btn btn-outline-secondary" href="{{route('dashboard')}}">Dashboard</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           @else
+                   
+               <div class="card">
                 <div class="card-header">{{ __('Home Page') }}</div>
                 <div class="card-body">
                   <div class="row text-center">
@@ -20,6 +35,7 @@
                   </div>
                 </div>
             </div>
+           @endif
 
         </div>
     </div>
