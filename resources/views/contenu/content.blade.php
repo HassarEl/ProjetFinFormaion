@@ -5,7 +5,12 @@
 @endsection
 
 @section('css')
-
+    <style>
+        .table {
+            border-radius: 10px !important;
+            box-shadow: 0 2px 8px rgba(94, 94, 94, 0.4);
+        }
+    </style>
 @endsection
 
 @section('title_header')
@@ -33,9 +38,9 @@
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <label for="inputPassword4" class="form-label">Composition</label>
+                <label class="form-label">Composition</label>
             </div>
-            <div class="card-body d-flex">
+            <div class="card-body d-flex justify-content-center">
                 <div class="col-8">
                     <table class="table table-bordere">
                       <thead>

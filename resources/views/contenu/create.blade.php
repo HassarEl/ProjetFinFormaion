@@ -29,7 +29,8 @@
           </div>
           <div class="card-body">
             
-              <form id="myForm" class="form">
+              <form id="myForm" class="form" action="{{route('contenu.attach')}}" method="POST">
+                @csrf
                 <div id="inputFields">
                   <div class="col-4">
                     <label for="jardin" class="form-label">Liste Jardins</label>
@@ -94,33 +95,33 @@
 
 
 <script type="text/javascript">
-$('.addRow').on('click', function(){
-addRow();
-});
-
-function addRow(){
-var tr = 
-'<tr>'+
-'<td>'+
-  '<select class="form-select" name="plante[]">'+
-      '<option selected>Selection La Plante</option>'+
-      '@foreach($plantes as $plante)'+
-          '<option value="{{$plante->id}}">{{$plante->name}}</option>'+
-      '@endforeach'+
-  '</select>'+
-'</td>'+
-'<td>'+
-  '<input type="text" name="quantite[]" class="form-control">'+
-'</td>'+
-'<td style="text-align: center">'+
-  '<button type="button" id="remove" class="btn btn-danger remove"><i class="bi bi-x-square"> Remove</i></button>'+
-'</td>'+
-'</tr>';
-$('tbody').append(tr);
-};
-$('tbody').on('click', '.remove', function(){
-$(this).parent().parent().remove();
-});
-
+    $('.addRow').on('click', function(){
+    addRow();
+    });
+    
+    function addRow(){
+    var tr = 
+    '<tr>'+
+    '<td>'+
+      '<select class="form-select" name="plante[]">'+
+          '<option selected>Selection La Plante</option>'+
+          '@foreach($plantes as $plante)'+
+              '<option value="{{$plante->id}}">{{$plante->name}}</option>'+
+          '@endforeach'+
+      '</select>'+
+    '</td>'+
+    '<td>'+
+      '<input type="text" name="quantite[]" class="form-control">'+
+    '</td>'+
+    '<td style="text-align: center">'+
+      '<button type="button" id="remove" class="btn btn-danger remove"><i class="bi bi-x-square"> Remove</i></button>'+
+    '</td>'+
+    '</tr>';
+    $('tbody').append(tr);
+    };
+    $('tbody').on('click', '.remove', function(){
+    $(this).parent().parent().remove();
+    });
+    
 </script>
 @endsection
