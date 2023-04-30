@@ -58,10 +58,10 @@
                                 {{$plante->name}}
                             </td>
                             <td>
-                               @foreach($pivot as $piv)
-                               {{$piv->quantite}}
-                               {{-- @dd($piv->id) --}}
-                               @endforeach
+                                @foreach($pivot as $quantite)
+                                    {{$quantite->quantite}}
+                                @endforeach
+                            
                             </td>
                             
                             <td>

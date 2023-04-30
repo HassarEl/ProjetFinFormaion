@@ -39,7 +39,16 @@ class ContenuController extends Controller
     {
         $jardins =  DB::table('jardins')->where('user_id', auth()->user()->id)->get();
         $plantes = Plant::all();
-        dd($request);
-        return view('contenu.attach', compact('jardins', 'plantes'));
+        
+        foreach($request->plante as $key=>$plant){
+            $data = new Jardinplante();
+            $data-> plant_id = $plant;
+            $data->jardin_id = $request->jardin;
+            $data->quantite = $request->quantite[$key];
+            $data->date_plantation = date(now());
+            $data->save();
+        }
+        return redirect()->route('contenu.content');
+        
     }
 }
