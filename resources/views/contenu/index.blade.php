@@ -100,7 +100,7 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                                <button type="submit" class="btn btn-info">Voire</button>
                             </div>
                         </div>
                       </form>
