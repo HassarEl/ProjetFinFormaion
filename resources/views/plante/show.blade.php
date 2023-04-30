@@ -34,9 +34,9 @@
                         <h5 class="card-text">Origine : {{ $plante->origin }}</h5>
                         <h5 class="card-text">Prix : {{ $plante->price }}</h5>
                         <h5 class="card-text"> Jardin : 
-                            <ul>
+                            <ul class="col-sm-4 list-group ">
                                 @foreach($plante->jardins as $jardin)
-                                <li>{{$jardin->nomJardin}}</li>
+                                <li class="list-group-item">{{$jardin->nomJardin}}</li>
                                 @endforeach
                             </ul>
                             

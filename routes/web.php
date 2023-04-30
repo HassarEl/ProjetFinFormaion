@@ -56,6 +56,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/contenu', [ContenuController::class,'content'])->name('contenu.content');
     Route::get('/contenu/create', [ContenuController::class,'create'])->name('contenu.create');
     Route::post('/contenu/create', [ContenuController::class,'attach'])->name('contenu.attach');
+    Route::delete('/contenu/{id}', [ContenuController::class,'destroy'])->name('contenu.delete');
 
 });
 

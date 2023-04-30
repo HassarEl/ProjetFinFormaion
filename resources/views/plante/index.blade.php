@@ -82,9 +82,9 @@
                         {{$plante->price}}
                     </td>
                     <td>
-                        <ul>
+                        <ul class="list-group">
                             @foreach($plante->jardins as $jardin)
-                                <li>{{$jardin->nomJardin}}</li>
+                                <li class="list-group-item">{{$jardin->nomJardin}}</li>
                             @endforeach
                         </ul>
                     </td>

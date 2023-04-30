@@ -52,28 +52,37 @@
                       </thead>
                       <tbody>
                     
-                    @foreach($jardin_plants as $plante)
+                    
+
+                        @foreach($contents as $content)
                         <tr>
                             <td>
-                                {{$plante->name}}
-                            </td>
-                            <td>
-                                @foreach($pivot as $quantite)
-                                    {{$quantite->quantite}}
+                                @foreach($plantes as $plant)
+                                    @if($name_plante = $plant->id == $content->plant_id)
+                                        {{$plant->name}}
+                                    @endif
                                 @endforeach
-                            
+                            </td>
+                            <td>
+                                
+                                {{$content->quantite}}
+            
                             </td>
                             
                             <td>
-                                <form method="POST" action="" accept-charset="UTF-8" >
+                                
+                                
+                                <form method="POST" action="{{url('/contenu/'. $content->id)}}" accept-charset="UTF-8" >
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                 </form>
+                                
+                                
                             </td>
                         </tr>
                         @endforeach
-                        
+                    
                     </tbody>
                   </table>
                 </div>

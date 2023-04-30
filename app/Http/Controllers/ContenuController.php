@@ -12,19 +12,19 @@ class ContenuController extends Controller
 {
     public function index()
     {
-        // $jardins = Jardin::all();
+        $content = Jardinplante::all();
         $jardins =  DB::table('jardins')->where('user_id', auth()->user()->id)->get();
         $plantes = Plant::all();
         return view('contenu.index', compact('jardins', 'plantes'));
     }
-    public function content(Request $request){
-
-        // dd($request->jardin);
+    public function content(Request $request)
+    {
+        $plantes = Plant::all();
         $jardin = Jardin::find($request->jardin);
         $jardin_plants = Jardin::find($request->jardin)->plants()->get();
-        $pivot = Jardinplante::all()->where('jardin_id', $request->jardin);
+        $contents = Jardinplante::all()->where('jardin_id', $request->jardin);
 
-        return view('contenu.content' , compact('jardin', 'jardin_plants', 'pivot'));
+        return view('contenu.content' , compact('jardin', 'jardin_plants', 'contents', 'plantes'));
     }
 
     public function create()
@@ -50,5 +50,12 @@ class ContenuController extends Controller
         }
         return redirect()->route('contenu.content');
         
+    }
+
+    public function destroy($id)
+    {
+
+        Jardinplante::destroy($id);
+        return redirect()->route('contenu.index')->with('message', 'Attach Has Been Detached');
     }
 }
