@@ -47,6 +47,7 @@
                         <tr>
                           <th>Plante</th>
                           <th>Quantite</th>
+                          <th>Date Plantation</th>
                           <th>Acction</th>
                         </tr>
                       </thead>
@@ -63,10 +64,14 @@
                                     @endif
                                 @endforeach
                             </td>
+                            
                             <td>
                                 
                                 {{$content->quantite}}
             
+                            </td>
+                            <td>
+                                {{$content->date_plantation}}
                             </td>
                             
                             <td>
