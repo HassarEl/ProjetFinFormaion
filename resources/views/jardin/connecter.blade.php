@@ -17,7 +17,7 @@
 @endsection
 
 @section('title_page2')
-    
+<a class="btn btn-outline-secondary" href="{{route('jardin.create')}}">Ajouter Jardin</a>
 @endsection
 
 @section('content')

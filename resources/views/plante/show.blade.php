@@ -33,14 +33,18 @@
                         <h4 class="card-text"> Num Plante: {{ $plante->id }}</h4>
                         <h5 class="card-text">Origine : {{ $plante->origin }}</h5>
                         <h5 class="card-text">Prix : {{ $plante->price }}</h5>
-                        <h5 class="card-text"> Jardin : 
-                            <ul class="col-sm-4 list-group ">
-                                @foreach($plante->jardins as $jardin)
-                                <li class="list-group-item">{{$jardin->nomJardin}}</li>
-                                @endforeach
-                            </ul>
-                            
-                        </h5>
+                        <br>
+                        <div class="row">
+                            <div class="ml-5">
+                                <h5 class="card-text"> Jardin : 
+                                    <ul class="col-sm-4 list-group ">
+                                        @foreach($plante->jardins as $jardin)
+                                        <li class="list-group-item">{{$jardin->nomJardin}}</li>
+                                        @endforeach
+                                    </ul>
+                                </h5>
+                            </div>
+                        </div>
                     </div>
                   </hr>
                 </div>

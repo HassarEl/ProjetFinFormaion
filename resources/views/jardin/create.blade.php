@@ -9,15 +9,15 @@
 @endsection
 
 @section('title_header')
-
+  Ajouter Jardin
 @endsection
 
 @section('title_page1')
-    
+  <a class="btn btn-outline-secondary" href="{{url('/dashboard')}}">Home</a>
 @endsection
 
 @section('title_page2')
-    
+<a class="btn btn-outline-secondary" href="{{route('jardin.jardinier_connecter')}}">Vos Jardin</a>
 @endsection
 
 @section('content')

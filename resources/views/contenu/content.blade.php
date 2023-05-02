@@ -18,9 +18,9 @@
 @endsection
 
 @section('title_page1')
-    
+    <a class="btn btn-outline-secondary" href="{{url('/dashboard')}}">Home</a>
 @endsection
-
+    <a class="btn btn-outline-secondary" href="{{route('contenu.create')}}">Add Content</a>
 @section('title_page2')
     
 @endsection
@@ -52,8 +52,6 @@
                         </tr>
                       </thead>
                       <tbody>
-                    
-                    
 
                         @foreach($contents as $content)
                         <tr>
