@@ -17,7 +17,8 @@
 @endsection
 
 @section('title_page2')
-    
+<a class="btn btn-outline-secondary" href="{{route('contenu.create')}}">Add Content</a>
+
 @endsection
 
 @section('content')

@@ -20,9 +20,9 @@
 @section('title_page1')
     <a class="btn btn-outline-secondary" href="{{url('/dashboard')}}">Home</a>
 @endsection
-    <a class="btn btn-outline-secondary" href="{{route('contenu.create')}}">Add Content</a>
-@section('title_page2')
     
+@section('title_page2')
+<a class="btn btn-outline-secondary" href="{{route('contenu.create')}}">Add Content</a>
 @endsection
 
 @section('content')
