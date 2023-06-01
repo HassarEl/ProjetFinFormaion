@@ -55,7 +55,8 @@
           </li>
           @endcan
           
-          {{-- Jardin --}}
+          @can('Jardinier')
+            {{-- Jardin --}}
           <li class="nav-item">
             <a href="{{route('jardin.jardinier_connecter')}}" class="nav-link">
               <i class="bi bi-bounding-box-circles"></i>
@@ -64,6 +65,7 @@
               </p>
             </a>
           </li>
+          @endcan
           
           {{-- Plante --}}
           <li class="nav-item">

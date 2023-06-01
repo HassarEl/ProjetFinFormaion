@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('Jardinier', function()
         {
-            return auth()->user()->id != 'admin';
+            return auth()->user()->profil != 'admin';
         });
     }
 }
